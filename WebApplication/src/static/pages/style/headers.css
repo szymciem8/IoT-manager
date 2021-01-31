@@ -1,0 +1,22 @@
+﻿/*  IT Project
+ *  Management console for IoT Devices
+ *	Stylesheet - informations.css
+ *	
+ *	JK, SC 2020 (Start: 21.12.2020)
+*/
+
+
+h2{
+	color: #498cda;
+	border-top: 1px solid #498cda;
+	border-bottom: 1px solid #498cda;
+	padding: 2px;
+}
+
+#h3_info{
+	color: #2268b8;
+	border-bottom: 1px solid #498cda;
+	padding: 2px;
+	margin: 2% 0% 1% 0%;
+	text-align: center;
+}

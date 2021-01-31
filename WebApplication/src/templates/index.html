@@ -1,0 +1,249 @@
+{% load static %}
+<!DOCTYPE html>
+
+
+<html lang="pl-PL">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="description" content="Management IoT">
+   	<meta name="keywords" content="IoT, Internet of things, Managment console">
+   	<meta name="author" content="Jakub, Szymon">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+	<link rel="stylesheet" type="text/css" href="{% static 'pages/style/main.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'pages/style/headers.css' %}">
+
+	<script type="text/javascript" src="{% static 'pages/js/jquery.min.js' %}"></script>
+	<title>Management system</title>
+</head>
+<body>
+
+	<header><!--Nagłówek-->
+		<h2 id="header_name"><a href = "{% url 'index' %}" style='text-decoration: none; color: inherit; '>Management Panel</a></h2>
+		<button id ='nav_button'>Menu</button> <!-- Przycisk przy responsywnym menu -->
+		
+		<nav><!--Navi-->
+				<ul class='menu'>
+					<li class='li_menu'><a class="a_menu"  style=" border-bottom: 1px solid #d0cfcfff;" href="{% url 'index' %}">Start</a>
+					<li class='li_menu'><a class="a_menu" href="{% url 'informations' %}">Informations</a>
+				</ul>
+		</nav>
+	</header>
+
+	<main>
+		<div class ='inline_buttons'>
+		<a href="{% url 'admin:index' %}"><button id ='opt_button'>Add New Device</button></a> <!-- Przycisk przy responsywnym menu -->
+		<button id ='opt_button'>Remove Device</button> <!-- Przycisk przy responsywnym menu -->
+		<a href='server_status.html'><button id ='opt_button'>Server Status</button></a> <!-- Przycisk przy responsywnym menu -->
+		<button id ='opt_button'>Additional Info</button> <!-- Przycisk przy responsywnym menu -->
+		
+
+		</div>
+
+
+
+		<h2>Connected devices</h2>
+
+		<div class = 'iot_contener'>
+
+			{% for widget in widget_list %}
+				<div class='iot_device'>
+					<h4 class='iot_name'>{{ widget.widget_name }}</h4>
+					
+					<form action="/turn" method='POST'>{% csrf_token %}
+						<input type="hidden" name="id" value={{forloop.counter}}> </input>
+						<input type="hidden" name="action" value="high"> </input>
+						<button class='iot_buttons' id ='iot_on_button'>ON</button> 
+					</form>
+
+					<form action="/turn" method='POST'>{% csrf_token %}
+						<input type="hidden" name="id" value={{forloop.counter}}> </input>
+						<input type="hidden" name="action" value="low"> </input>
+						<button class='iot_buttons' id ='iot_off_button'>OFF</button> 
+					</form>
+			
+					<div class='iot_description'>
+						<p>{{ widget.description }}</p>
+					</div>
+					
+					<span class='iot_status'>Status: <i>Connected</i></span>
+				</div>
+			{% endfor %}
+
+<!--
+				<div class="slidecontainer">
+					<input style='width: 75%;' type="range" min="1" max="100" value="50" class="slider" id="myRange">
+				</div>
+			
+
+			<div class='iot_device'>
+				<h4 class='iot_name'>Device name 3</h4>
+
+				<div class='iot_returned_value'>
+				<h4 class ='iot_ret_h4'>Values:</h4>
+				<p>Temperature: 10 &deg;C. </p>
+				<p>Humidity: 45%  </p>
+				<p>Pressure: 1050 hPa  </p>
+				<p>Wind: strong </p>
+				</div>
+				<div class='iot_description'>
+					<b>Weather measurement station.</b> 
+					<p>Location: Garden</p>
+				</div>
+				
+				<span class='iot_status'>Status: <i>Connected</i></span>
+			</div>
+
+			<div class='iot_device'>
+				<h4 class='iot_name'  style='background-color: #CC9714'>Device name 4</h4>
+				<button class='iot_buttons' id ='iot_on_button'>ON</button> 
+				<button class='iot_buttons' id ='iot_off_button'>OFF</button> 
+				<div class='iot_returned_value'>
+				<h4 class ='iot_ret_h4'>Problem report:</h4>
+				<p style='line-height: 1;'>It looks like the nodemcu has a problem with the network (E002)</p>
+			
+				</div>
+				<span class='iot_status'>Status: <i>Problems</i></span>
+			</div>
+-->
+
+		</div>
+</br></br>
+
+	<h2>Disconnected devices</h2>
+
+	<div class = 'iot_contener'>
+
+			<div class='iot_device'>
+				<h4 class='iot_name'  style='background-color: #ff0505'>Device name 5</h4>
+				<button class='iot_buttons' id ='iot_on_button'>ON</button> 
+				<button class='iot_buttons' id ='iot_off_button'>OFF</button> 
+				<div class='iot_description'>
+					<b>Anti-theft module</b> 
+					<p>It was destroyed (kaboom) by robbers</p>
+				</div>
+				<span class='iot_status'>Status: <i>Disconnected</i></span>
+			</div>
+
+			<div class='iot_device'>
+				<h4 class='iot_name'  style='background-color: #ff0505'>Device name 6</h4>
+				<form action="/turn_on">
+					<button class='iot_buttons' id ='iot_on_button'>ON</button> 
+				</form>
+
+				<form action="/turn_off">
+					<button class='iot_buttons' id ='iot_off_button'>OFF</button> 
+				</form>
+
+				<div class='iot_description'>
+					<b>Light module</b> 
+					<p>Automatic lamp module in garden</p>
+				</div>
+				<span class='iot_status'>Status: <i>Disconnected</i></span>
+			</div>
+
+			<div class='iot_device'>
+				<h4 class='iot_name'  style='background-color: #ff0505'>Device name 7</h4>
+				<button class='iot_buttons' id ='iot_on_button'>ON</button> 
+				<button class='iot_buttons' id ='iot_off_button'>OFF</button> 
+				<span class='iot_status'>Status: <i>Disconnected</i></span>
+			</div>
+
+			<div class='iot_device'>
+				<h4 class='iot_name'  style='background-color: #ff0505'>Device name 8</h4>
+				<button class='iot_buttons' id ='iot_on_button'>ON</button> 
+				<button class='iot_buttons' id ='iot_off_button'>OFF</button> 
+				<span class='iot_status'>Status: <i>Disconnected</i></span>
+			</div>
+
+		</div>
+
+		<h2>Last activity</h2>
+
+		<table class='log_table'> <tr><th id='log_lp_row'>No.</th><th>Device</th><th id='log_msg'>Message</th><th>Status</th><th>Date</th>   </tr>
+			<tr>
+				<td id='log_lp_row'>1 </td>
+				<td>U1</td>
+				<td id='log_msg'>Send to 'nodeMcu1' msg = 'switch-on-pin-5'</td>
+				<td>Success</td>
+				<td>01-01-2021</td>
+			</tr>
+			<tr>
+				<td id='log_lp_row'>2 </td>
+				<td>U1</td>
+				<td id='log_msg'>Something2</td>
+				<td>Error</td>
+				<td>02-01-2021</td>
+			</tr>
+			<tr>
+				<td id='log_lp_row'>3 </td>
+				<td>U5</td>
+				<td id='log_msg'>Something3</td>
+				<td>Info</td>
+				<td>03-01-2021</td>
+			</tr>
+			<tr>
+				<td id='log_lp_row'>4 </td>
+				<td>U1</td>
+				<td id='log_msg'>Something4</td>
+				<td>Warning</td>
+				<td>04-02-2021</td>
+			</tr>
+			<tr>
+				<td id='log_lp_row'>5 </td>
+				<td>U3</td>
+				<td id='log_msg'>Checking status of all devices from group 'Group1'</td>
+				<td>Success</td>
+				<td>05-02-2021</td>
+			</tr>
+			<tr>
+				<td id='log_lp_row'>6 </td>
+				<td>U5</td>
+				<td id='log_msg'>Someone tried to hack iot (IP: 10.11.20.201)</td>
+				<td>Alert</td>
+				<td>06-02-2021</td>
+			</tr>
+			<tr>
+				<td id='log_lp_row'>7 </td>
+				<td>U1</td>
+				<td id='log_msg'>Send to 'esp32-1' msg = 'restart-now'</td>
+				<td>Success</td>
+				<td>06-02-2021</td>
+			</tr>
+		</table>
+			</br>
+    </main>
+
+	
+
+	<div id='account_menu'>
+				<a href = '#' alt='Your account' class= 'url_to_account' id='user_photo'> <img src="{% static 'pages/style/Icons/account_50.png' %}" alt='Your photo' ></a>
+				<p class='p_account_menu'>Logged as: <span>>Name User<</span></p>
+				<a href = '#' alt='Logout' title='Logout' class= 'url_to_account'> <img src="{% static 'pages/style/Icons/exit_80.png' %}" alt='Logout' id='user_logout'></a>
+				<a href = '#' alt='Settings' title='Settings' class= 'url_to_account'> <img src="{% static 'pages/style/Icons/settings_80.png' %}" alt='Settings' id='user_options'></a>				
+	</div>
+
+	<footer><!--Stopka-->
+		<small title='Jakub Kaniowski, Szymon Ciemała'>Copyright &copy; 2020-2021 JK SC</small>
+		
+		<small style='float:right; margin-right: 10px; margin-left: -10px;'>v.0.1</small>
+	</footer>
+
+	<script>
+		$(document).ready(function(){
+			$('#nav_button').click(function(){
+				$('nav').stop().slideToggle(250);
+			});
+		}); 
+	</script>
+	
+	<div id="responsible_alert"><!--Div CSS'a nie ruszać!-->
+		<p id='p_responsible_alert' >Oops.. Your screen resolution is not supported!</p>
+		<small>Try zoom in / zoom out this web site.</small>
+        <p id='p_responsible_alert' >Ups.. Wygląda na to, że nie obsługuję Twojej rozdzielczości!</p>
+        <small>Spróbuj przybliżyć/oddalić widok strony WWW w przeglądarce.</small>
+	</div>
+</body>
+
+		
+</html>

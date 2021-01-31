@@ -1,0 +1,1395 @@
+﻿/*  IT Project
+ *  Management console for IoT Devices
+ *	Stylesheet - main.css
+ *	
+ *	JK, SC 2020 (Start: 20.12.2020)
+*/
+
+
+/*
+--snow: #fffbfeff;
+--gray-web: #7a7d7dff;
+--light-gray: #d0cfcfff;
+--dark-liver: #565254ff;
+--white: #ffffffff;
+
+niebieski: #3F00FF
+żółty: #FFDB40
+ciemny żółty: #CC9714
+*/
+
+/* ------------------ Fonts Declaration ------------------ */
+@font-face{
+
+	font-family: Main_font;
+	src:url(fonts/Rubik-VariableFont_wght.ttf);
+}
+
+@font-face{
+
+	font-family: Oxygen_Bold;
+	src:url(fonts/Oxygen-Bold.ttf);
+}
+
+@font-face{
+
+	font-family: PTSans;
+	src:url(fonts/PTSans-Regular.ttf);
+}
+
+@font-face{
+
+	font-family: Poppins;
+	src:url(fonts/Poppins-Regular.ttf);
+}
+@font-face{
+
+	font-family: Poppins_bold;
+	src:url(fonts/Poppins-Bold.ttf);
+}
+
+@font-face{
+
+	font-family: Roboto_light;
+	src:url(fonts/Roboto-Light.ttf);
+}
+
+/* --------------- Standard declarations ----------------- */
+/*         Global CSS. 
+/* ------------------------------------------------------- */
+#responsible_alert{
+	display: none;
+}
+#p_responsible_alert{
+	display: none;
+}
+
+#nav_button{
+	display: none;
+}
+body{
+	/*background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);*/
+	/*background-image: linear-gradient(0deg, #a1c4fd 0%, #c2e9fb 100%);*/
+	/*background-image: linear-gradient(0deg, #29323c 0%, #485563 100%);*/
+	/*background-image: linear-gradient(0deg, #88b3e2 0%, #d2dbe6 100%);*/
+	/*background-image: linear-gradient(0deg, #eff6ff 0%, #d2dbe6 100%);*/
+	background-image: linear-gradient(0deg, #d1e5ff 0%, #f9f9f9 100%);
+	
+	background-attachment: fixed;
+	margin: 0px auto;
+	padding: 0% ;
+	font-family: Roboto_light;
+	width:100%;
+	min-height:100%;
+}
+
+header{
+	display: block;;
+	width: 100%;
+	
+	margin: 0px auto;
+	font-family: Poppins;
+	color: #dcdddf;
+	background-color:#1680c7;
+
+	position: fixed;
+	top: 0px;
+	z-index: 3;
+}
+
+#header_name{
+	margin-left: 25%;
+	color: #e9ebf0;
+	border: none;
+	padding: none;
+	display: inline-block;
+}
+
+nav{
+	display: inline-block;
+	height: 100%;
+	margin: 0px;
+	position: absolute;
+	right: 25%;
+}
+
+.menu{
+	display: block;
+	height: 100%;
+	margin: 0px;
+	
+}
+
+.li_menu{
+	text-decoration: none;
+	display: inline-block;
+	padding: 4px;
+	margin-top: 13%;			
+}
+
+.a_menu{
+	text-decoration: none; 
+	font-size: 16px;
+	transition-duration: 0.3s;
+	color: #f7f7f7;
+	transition: 0.10s;
+	margin-bottom: 1px;
+}
+
+.a_menu:hover{
+	color: #ffffff;
+	font-weight: 500;
+	margin-bottom: 0px;
+	border-bottom: 1px solid #ffffff;
+
+}
+
+main{
+	display: inline-block;
+	margin: 0px auto;
+	min-height: 100%;
+	width: 50%;
+	margin-left: 25%;
+	margin-top:100px;
+	margin-bottom: 50px;
+	text-align: justify;
+	
+}
+
+main > article{
+	line-height: 1.7;
+	font-size: 17px;
+	clear: both;
+	margin-top: 2%;
+}
+
+.columns_container
+{
+	
+}
+
+.left_article{
+	display:block;
+	line-height: 1.7;
+	width: 49%;
+	float: left;
+	margin-bottom: 5%;
+}
+
+.right_article{
+	display:block;
+	line-height: 1.7;
+	width: 49%;
+	float: right;
+	margin-bottom: 5%;
+}
+
+footer{
+	display: block;
+	width: 98%;
+	padding: 1%;
+	color: #888080;
+	background-color:rgb(219, 222, 246);
+	position:static;
+	bottom: 0px;
+	margin: 0px auto;
+	margin-top: 0.5%;
+	font-family: Oxygen_bold;
+	height: 2%;
+}
+
+/*	Account menu	*/
+#account_menu{
+	position: fixed;
+	bottom: 0px;
+	z-index: 3;
+	margin-left:35%;
+	width: 30%;
+	height: 45px;
+	padding-bottom:1%;
+	background-color:#1680c7;
+	color:#f7f7f7;
+	border:1px solid #2958af;
+	border-radius: 8px 8px 0px 0px;
+	box-shadow: 0px 0px 10px #74727a;
+}
+
+#log_in_form{
+	display: inline-block;
+
+}
+
+#log_in_form > input{
+	display: inline-block;
+	border: 1px solid #2e69c2;
+}
+
+.url_to_account{
+	text-decoration: none;
+	float: right;
+	margin: 1% 1% 1% 2%;
+	
+}
+
+#user_photo{
+	margin-bottom: 2%;
+	float: left !important;
+}
+
+#user_account{
+	display: inline-block;
+}
+
+#user_options{
+	width: 50px;
+	border-bottom: 4px solid #1680c7;
+	transition-duration: 0.2s;
+}
+
+#user_options:hover{
+	width: 50px;
+	border-bottom: 4px solid #c06d20;
+	background-color: #3b9ddf;
+	border-radius: 8px 8px 8px 8px;
+}
+
+#user_logout{
+	width: 65%;
+	border-bottom: 4px solid #1680c7;
+	transition-duration: 0.3s;
+}
+
+#user_logout:hover{
+	width: 65%;
+	border-bottom: 4px solid #df2d2d;
+	background-color: #3b9ddf;
+	border-radius: 8px 8px 8px 8px;
+}
+
+.p_account_menu{
+	display: inline-block;
+	margin: 3.5% 0% 0% 0%;
+	font-weight: 500;
+}
+
+.p_account_menu_not_login
+{
+	display: block;
+	margin: 1%;
+	border-bottom: 1px solid #549ce1;
+	padding-bottom: 0.5%;
+	font-family: PTSans;
+	color: #28da63;
+	text-align: center;
+}
+
+.p_account_menu > span{
+	color: #57d362;
+	font-weight: 600;
+}
+
+#log_in_form{
+	display: block;
+	text-align: center;
+}
+
+#log_in_form > input{
+	display: inline-block;
+	padding: 0.5%;
+    background-color: #d6daff;
+    text-align: center;
+    font-family: 'Oxygen_Bold';
+    border-radius: 5px;
+	border: 1px solid #5c5c5d;
+	color: #282a6f;
+	transition-duration: 0.2s;
+}
+
+#log_in_form > input:hover{
+	border: 1px solid #2323ad;
+	background-color: #edeffd;
+}
+
+#log_in_form > input:active{
+	border: 1px solid #2323ad;
+	background-color: #edeffd;
+}
+
+
+
+#log_in_form > button{
+	display: inline-block;
+	padding: 0.3%;
+	padding-left: 1%;
+	padding-right: 1%;
+    background-color: #cf5a46;
+    text-align: center;
+	font-family: 'Oxygen_Bold';
+	font-size: 14px;
+    border-radius: 5px;
+	border: 1px solid #221f1f;
+	color: #fdfdfd;
+	cursor: pointer;
+	transition-duration: 0.2s;
+}
+
+#log_in_form > button:hover{
+	border: 1px solid #221f1f;
+	background-color: #16c224;
+}
+
+.inline_buttons{
+	display: block;
+	margin: 0px auto;
+	text-align: center;
+}
+
+#opt_button{
+	display: inline-block;
+	padding: 6px;
+	margin: 1% 0% 1% 0%;
+	background-color: #b0b9ce;
+	font-family:  Oxygen_Bold;
+	color: white;
+	cursor: pointer;
+	border: 1px solid #1680c7;
+	border-radius: 2px 2px 2px 2px;
+
+	transition-duration: 0.2s;
+}
+
+#opt_button:hover{
+	background-color: #848bcf;
+
+}
+
+/*	IoT device	*/
+.iot_contener{
+	text-align: center;
+	display: flex;
+	justify-content:center;
+	flex-flow:wrap;
+}
+
+.iot_device{
+	
+	width: 250px;
+	height: 250px;
+	text-align:center;
+	border: 1px solid #b3a8a8;
+	border-radius: 8px 8px 8px 8px;
+	background-color: #ddeeee;
+	margin: 1%;
+	position: relative;
+	
+}
+
+.selected_iot_device{
+	width: 100%;
+	height: 786px;
+	text-align: left;
+	border: 1px solid #b3a8a8;
+	border-radius: 8px 8px 8px 8px;
+	background-color: #ddeeee;
+	position: relative;
+}
+
+.selected_iot_box
+{
+	font-size: 14px;
+	padding: 2%;
+}
+
+.selected_iot_name{
+	display: block;
+	width: 99%;
+	font-family: Poppins;
+	font-size: 18px;
+	color: #f7f7f7;
+	margin: 0px auto;
+	margin-bottom: 3%;
+	background-color: #15a515;
+	border-radius: 8px 8px 0px 0px;
+	top: 0px;
+	text-align: left;
+	padding-left: 1%;
+}
+
+.selected_iot_h5
+{
+	display: block;
+	text-align: left;
+	font-size: 14px;
+	font-family: Roboto_light;
+	color: #2d5ad4;
+	border-bottom: 1px solid #b9b8be;
+	width: 25%;
+	
+}
+.iot_name{
+	display: block;
+	width: 100%;
+	font-family: Poppins;
+	font-size: 18px;
+	color: #f7f7f7;
+	margin: 0px auto;
+	margin-bottom: 3%;
+	background-color: #15a515;
+	border-radius: 8px 8px 0px 0px;
+	top: 0px;
+}
+
+
+
+.iot_returned_value{
+	display: block;
+	margin-top: 4%;
+	font-size: 14px;
+	margin-left: 4%;
+	margin-right: 4%;
+	line-height: 1;
+
+}
+.iot_ret_h4
+{
+	display:block;
+	text-align: left;
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Courier New', Courier, monospace;
+	color:#3b3a3d;
+	
+}
+
+.iot_returned_value > p{
+	display:block;
+	text-align: left;
+	font-family: 'Courier New', Courier, monospace;
+	line-height: 0.5;
+}
+
+.iot_status{
+	display: block;
+	width: 100%;
+	margin-top: 5%;
+	background-color: rgb(203, 211, 211);
+	font-family: Roboto_light;
+	font-weight: 600;
+	position: absolute;
+	bottom: 0px;
+	font-size: 15px;
+	color: #868686;
+
+}
+
+
+.iot_description{
+	display:block;
+	font-size: 14px;
+	position:absolute;
+	bottom: 0px;
+	width: 92%;
+	margin: 4%;
+	margin-bottom: 6%;
+	
+}
+
+.iot_status > i{
+
+	color: #443d3d;
+
+}
+
+.iot_buttons{
+	display: inline-block;
+	border-radius: 10%;
+	border: none;
+	width: 70px;
+	height: 40px;
+	color: white;
+	font-family: Poppins;
+	font-size:17px;
+	cursor: pointer;
+	margin: 5% 3% 2% 3%;
+
+}
+
+#iot_on_button{
+	background-color: #1a9933;
+	border: 1px solid #3b8842;
+	transition-duration: 0.2s;
+}
+#iot_on_button:hover{
+	background-color: #09bd2d;
+	border-color: #698322;
+}
+#iot_off_button{
+	background-color: #f03636;
+	border: 1px solid #a31616;
+	transition-duration: 0.2s;
+}
+#iot_off_button:hover{
+	background-color: #ee4a4a;
+	border-color: #bb1919;
+	color: rgb(240, 225, 22);
+}
+
+.log_table {
+	width: 100%;
+	font-family: PTSans, sans-serif;
+	font-size: 16px;
+	padding: 0.5%;
+	margin: auto;
+	background-color: #f7f7f7;
+	border-collapse: collapse;
+	border-radius: 8px 8px 0px 0px;
+}
+.log_table > tbody > tr{
+	font-size: 100%;
+	transition-duration: 0.15s;
+}
+.log_table > tbody > tr:hover{
+
+	background-color: #edeef5;
+	border:1px solid #5a53bd;
+	
+}
+.log_table > tbody > tr > th{
+	font-size: 16px;
+	padding-bottom: 0.6%;
+	padding-top: 0.6%;
+	text-align:center !important;
+	border:1px solid #c0bdec;
+	background-color: #e7ebec;
+	font-family: sans-serif, calibri;
+	font-weight: 400;
+	color: #2e69c2;
+}
+.log_table > tbody > tr > td{
+
+	padding: 0.5%;
+	text-align: center;
+	border:1px solid #bebcda;
+}
+
+#log_lp_row{
+	width: 3%;
+	text-align: center;
+}
+
+#log_msg{
+	width: 75%;
+	text-align: left;
+}
+
+
+
+/* ------------------ Not supported size ----------------- */
+/*    Tiny: 0px - 319px      Large: 3087px - (inf)
+/* ------------------------------------------------------- */
+
+/*Tycia rozdzielczość nie obsługiwana*/
+@media screen and (min-width:0px) and (max-width:319px)
+{
+	#responsible_alert{
+		display: block !important;
+		margin: 0px auto;
+		margin-top: 20%;
+		padding: 2%;
+		color: #4d71b3;
+		text-align: center;
+	}
+	#p_responsible_alert{
+		display: block !important;
+		font-weight: 600;
+		color:#ff2c2c;
+	}
+	header, nav, main, footer, #account_menu{
+		display: none !important;
+	}
+}
+/* Duże */
+@media screen and (min-width:3087px)
+{
+	#responsible_alert{
+		display: block !important;
+		margin: 0px auto;
+		margin-top: 10%;
+		background-image: linear-gradient(0deg, #b3d0ff 0%, #c2e9fb 100%);
+		border: 1px double #cc1d1d;
+		width: 30%;
+		height: 25%;
+		padding: 5%;
+		text-align: center;
+		font-family: PTSans;
+		font-size: 40px;
+		color: #4d71b3;
+		box-shadow: 0px 0px 20px #161616;
+	}
+	#p_responsible_alert{
+		display: block !important;
+		font-weight: 600;
+		color:#ff2c2c;
+	}
+	header, nav, main, footer{
+		display: none !important;
+	}
+	#account_menu{
+		display: none;
+	}
+}
+/*PRZECIĘTNY EKRAN 1280->3086*/
+@media screen and (min-width:1690px) and (max-width:3086px)
+{
+
+
+
+}
+
+/*MAŁY EKRAN! / Tablet mniejsze monitory*/
+@media screen and (min-width:786px) and (max-width: 1689px)
+{
+	
+	header{
+		width: 100%;
+		height: 80px;
+		margin: 0px auto;
+		top: 0px;
+	}
+
+	#header_name{
+		margin-left: 5%; /*W sumie to sie tylko zmienia*/
+		margin-top: 20px;
+	}
+
+	nav{
+		height: 100%;
+		margin: 0px;
+		right: 5%;
+	}
+
+	.menu{
+		display: block;
+		height: 100%;
+		margin: 0px;
+		
+	}
+	
+	.li_menu{
+		text-decoration: none;
+		display: inline-block;
+		padding: 4px;
+		margin-top: 13%;			
+	}
+
+	.a_menu{
+		text-decoration: none; 
+		font-size: 16px;
+		transition-duration: 0.2s;
+		color: #f7f7f7;
+		transition: 0.10s;
+		margin-bottom: 1px;
+	}
+
+	.a_menu:hover{
+		color: #ffffff;
+		font-weight: 500;
+		margin-bottom: 0px;
+		border-bottom: 1px solid #ffffff;
+
+	}
+
+	main{
+		width: 90%; /*W sumie to sie tylko zmienia*/
+		margin-left: 5%; /*W sumie to sie tylko zmienia*/
+		
+	}
+
+	footer{
+		width: 98%;
+		padding: 1%;
+		bottom: 0px;
+		margin: 0px auto;
+		margin-top: 0.5%;
+	}
+	
+	/*	Account menu	*/
+	#account_menu{
+		position: fixed;
+		bottom: 0px;
+		z-index: 3;
+		margin-left:30%;
+		margin-right:30%;
+		width: 512px;
+		height: 60px;
+		padding: 0.5%;
+
+	}
+
+	.url_to_account{
+		text-decoration: none;
+		
+	}
+
+
+	.user_photo{
+		margin-bottom: 2%;
+	}
+
+	#user_account{
+		display: inline-block;
+		
+		
+	}
+	.p_account_menu{
+		display: inline-block;
+	}
+
+	/*	IoT device	*/
+	.iot_contener{
+		text-align: center;
+		display: flex;
+		justify-content:center;
+		flex-flow:wrap;
+	}
+
+	.iot_device{
+		
+		width: 250px;
+		height: 250px;
+		text-align:center;
+		border: 1px solid #b3a8a8;
+		border-radius: 8px 8px 8px 8px;
+		background-color: #ddeeee;
+		margin: 1%;
+		position: relative;
+		
+	}
+
+	.selected_iot_device{
+		width: 75%;
+		height: 500px;
+	}
+
+	.iot_name{
+		display: block;
+			
+		width: 100%;
+		font-family: Poppins;
+		font-size: 18px;
+		color: #f7f7f7;
+		margin: 0px auto;
+		margin-bottom: 3%;
+		background-color: #15a515;
+		border-radius: 8px 8px 0px 0px;
+		top: 0px;
+	}
+
+
+
+	.iot_returned_value{
+		display: block;
+		margin-top: 4%;
+		font-size: 14px;
+		margin-left: 4%;
+		margin-right: 4%;
+		line-height: 1;
+
+	}
+	.iot_ret_h4
+	{
+		display:block;
+		text-align: left;
+		margin: 0px;
+		padding: 0px;
+		font-family: 'Courier New', Courier, monospace;
+		color:#3b3a3d;
+		
+	}
+
+	.iot_returned_value > p{
+		display:block;
+		text-align: left;
+		font-family: 'Courier New', Courier, monospace;
+		line-height: 0.5;
+	}
+
+	.iot_status{
+		display: block;
+		width: 100%;
+		margin-top: 5%;
+		background-color: rgb(203, 211, 211);
+		font-family: Roboto_light;
+		font-weight: 600;
+		position: absolute;
+		bottom: 0px;
+		font-size: 15px;
+		color: #868686;
+
+	}
+
+
+	.iot_description{
+		display:block;
+		font-size: 14px;
+		position:absolute;
+		bottom: 0px;
+		width: 92%;
+		margin: 4%;
+		margin-bottom: 6%;
+		
+	}
+
+	.iot_status > i{
+
+		color: #443d3d;
+
+	}
+
+	.iot_buttons{
+		display: inline-block;
+		border-radius: 10%;
+		border: none;
+		width: 70px;
+		height: 40px;
+		color: white;
+		font-family: Poppins;
+		font-size:17px;
+		cursor: pointer;
+		margin: 5% 3% 2% 3%;
+
+	}
+
+	#iot_on_button{
+		background-color: #1a9933;
+		border: 1px solid #3b8842;
+	}
+	#iot_on_button:hover{
+		background-color: #09bd2d;
+		border-color: #698322;
+	}
+	#iot_off_button{
+		background-color: #f03636;
+		border: 1px solid #a31616;
+	}
+	#iot_off_button:hover{
+		background-color: #dd0505;
+		border-color: #bb1919;
+		color: yellow;
+	}
+
+
+	#log_msg{
+		width: 65%;
+	}
+
+}
+/*MOBILNE!*/
+@media screen and (min-width:320px) and (max-width:785px)
+{
+	#nav_button{
+		display:block;
+		float: right;
+		margin: 4px;
+		padding: 15px;
+		max-height: 75%;
+		max-width: 35px;
+		margin-right: 4%;	
+		background-color: transparent;
+		background-image: url(menu.png);
+		border: 0px transparent;
+		color: transparent;
+		transition-delay: 2ms;
+		animation-delay: 2ms;
+	}
+
+	#nav_button:focus{
+		border: 1px solid #ccdae0;
+	}
+	
+	#nav_button:hover{
+		background-image: url(menu_active.png);
+		border: transparent;
+		transition-delay: 2ms;
+		animation-delay: 2ms;
+	}
+
+	nav{
+
+		width: 100%;
+		height: 300px;
+		margin-top: -4%;
+		display: none;
+		background-color:#51a4db;
+		position: static;
+		margin: 0px;
+		padding: 1px;
+		border-bottom: 1px solid #282a6f;
+		font-size: 125%;
+	}
+	.menu{
+		display:block;
+		list-style: none;
+
+
+	}
+	header{
+		display: block;
+		width: 100%;
+	
+		margin: 0px auto;
+		top: 0px;
+		font-family: Poppins;
+		color: #dcdddf;
+		background-color:#1680c7;
+		position: fixed;
+		z-index: 3;
+	}
+	
+	#header_name{
+		margin-left: 2%; /*W sumie to sie tylko zmienia*/
+		margin-top: 10px;
+		font-size: 125%;
+		color: #e9ebf0;
+		border: none;
+		padding: none;
+		display: inline-block;
+	}
+
+
+
+	.a_menu{
+		text-decoration: none; 
+		font-size: 16px;
+		transition-duration: 0.2s;
+		color: #f7f7f7;
+		transition: 0.10s;
+		margin-bottom: 1px;
+		font-family: 'Oxygen_Bold';
+		width:250px;
+		
+	}
+
+	.a_menu:hover{
+		color: #7bb679;
+		font-weight: 500;
+		margin-bottom: 0px;
+		border-bottom: 1px solid #ffffff;
+
+	}
+
+	.li_menu{
+		display:block;
+		margin: 0px auto;
+		margin-top: 5%;
+		
+	}
+
+	main{
+		width: 90%; /*W sumie to sie tylko zmienia*/
+		margin-left: 5%; /*W sumie to sie tylko zmienia*/
+		font-size:100%;
+	}
+
+	footer{
+		width: 98%;
+		padding: 1%;
+		bottom: 0px;
+		margin: 0px auto;
+		margin-top: 0.5%;
+	}
+	
+	/*	Account menu	*/
+	#account_menu{
+		display: block;;
+		width: 100%;
+		height: 55px;
+		margin: 0px auto;
+		bottom: 0px;
+		font-family: Poppins;
+		color: #dcdddf;
+		background-color:#1680c7;
+		position: fixed;
+		z-index: 3;
+		
+
+	}
+	#log_in_form{
+		display: inline-block;
+	
+	}
+	
+	#log_in_form > input{
+		display: inline-block;
+		border: 1px solid #2e69c2;
+	}
+	
+	.url_to_account{
+		text-decoration: none;
+	
+		
+	}
+	
+	#user_photo{
+		margin-bottom: 2%;
+		float: left !important;
+	}
+	
+	#user_account{
+		display: inline-block;
+	}
+	
+	#user_options{
+		width: 40px;
+		border-bottom: 4px solid #1680c7;
+		transition-duration: 0.2s;
+		margin-top:6%;
+	}
+	
+	#user_options:hover{
+		width: 40px;
+		border-bottom: 4px solid #d1831e;
+		margin-top:6%;
+	}
+	
+	#user_logout{
+		width: 40px;
+		border-bottom: 4px solid #1680c7;
+		transition-duration: 0.3s;
+		margin-top:6%;
+		margin-right: 5%;
+	}
+
+	#user_logout:hover{
+		width: 40px;
+		border-bottom: 4px solid #c71616;
+		margin-top:6%;
+		margin-right: 5%;
+	}
+	
+	
+	
+	.p_account_menu{
+		display: inline-block;
+		margin: 4% 0% 0% 2%;
+		font-weight: 500;
+		font-size: 80%;
+	}
+	
+	.p_account_menu_not_login
+	{
+		display: block;
+		margin: 1%;
+		border-bottom: 1px solid #549ce1;
+		padding-bottom: 0.0%;
+		font-family: PTSans;
+		color: #28da63;
+		text-align: center;
+	}
+	
+	.p_account_menu > span{
+		color: #57d362;
+		font-weight: 600;
+	}
+	
+	#log_in_form{
+		display: block;
+		text-align: center;
+	}
+	
+	#log_in_form > input{
+		display: inline-block;
+		padding: 0.5%;
+		background-color: #d6daff;
+		text-align: center;
+		font-family: 'Oxygen_Bold';
+		font-size: 80%;
+		border-radius: 5px;
+		border: 1px solid #5c5c5d;
+		color: #282a6f;
+		transition-duration: 0.2s;
+		width: 40%;
+		
+	}
+	
+	#log_in_form > input:hover{
+		border: 1px solid #2323ad;
+		background-color: #edeffd;
+	}
+	
+	#log_in_form > input:active{
+		border: 1px solid #2323ad;
+		background-color: #edeffd;
+	}
+	
+	
+	
+	#log_in_form > button{
+		display: inline-block;
+		padding: 0.3%;
+		padding-left: 1%;
+		padding-right: 1%;
+		background-color: #cf5a46;
+		text-align: center;
+		font-family: 'Oxygen_Bold';
+		font-size: 14px;
+		border-radius: 5px;
+		border: 1px solid #221f1f;
+		color: #fdfdfd;
+		cursor: pointer;
+		transition-duration: 0.2s;
+	}
+	
+	#log_in_form > button:hover{
+		border: 1px solid #221f1f;
+		background-color: #16c224;
+	}
+	
+	.inline_buttons{
+		display: block;
+		margin: 0px auto;
+		text-align: center;
+	}
+
+	.inline_buttons > a {
+		text-decoration:none;
+	}
+	
+	#opt_button{
+		display: block;
+		padding: 6px;
+		margin: 0% 0% 1% 0%;
+		background-color: #b0b9ce;
+		font-family:  Oxygen_Bold;
+		font-size: 80%;
+		color: white;
+		cursor: pointer;
+		border: 1px solid #1680c7;
+		border-radius: 2px 2px 2px 2px;
+		width: 100%;
+		transition-duration: 0.2s;
+		text-decoration: none;;
+	}
+	
+	#opt_button:hover{
+		background-color: #848bcf;
+	
+	}
+	.url_to_account{
+		display: block;
+		text-decoration: none;
+	}
+
+
+	/*	IoT device	*/
+	.iot_contener{
+		text-align: center;
+		display: flex;
+		justify-content:center;
+		flex-flow:wrap;
+	}
+
+	.iot_device{
+		
+		width: 100%;
+		height: 250px;
+		text-align:center;
+		border: 1px solid #b3a8a8;
+		border-radius: 8px 8px 8px 8px;
+		background-color: #ddeeee;
+		margin: 1%;
+		position: relative;
+		
+	}
+
+	.selected_iot_device{
+		width: 75%;
+		height: 500px;
+	}
+
+	.iot_name{
+		display: block;
+			
+		width: 100%;
+		font-family: Poppins;
+		font-size: 18px;
+		color: #f7f7f7;
+		margin: 0px auto;
+		margin-bottom: 3%;
+		background-color: #15a515;
+		border-radius: 8px 8px 0px 0px;
+		top: 0px;
+	}
+
+
+
+	.iot_returned_value{
+		display: block;
+		margin-top: 4%;
+		font-size: 14px;
+		margin-left: 4%;
+		margin-right: 4%;
+		line-height: 1;
+
+	}
+	.iot_ret_h4
+	{
+		display:block;
+		text-align: left;
+		margin: 0px;
+		padding: 0px;
+		font-family: 'Courier New', Courier, monospace;
+		color:#3b3a3d;
+		
+	}
+
+	.iot_returned_value > p{
+		display:block;
+		text-align: left;
+		font-family: 'Courier New', Courier, monospace;
+		line-height: 0.5;
+	}
+
+	.iot_status{
+		display: block;
+		width: 100%;
+		margin-top: 5%;
+		background-color: rgb(203, 211, 211);
+		font-family: Roboto_light;
+		font-weight: 600;
+		position: absolute;
+		bottom: 0px;
+		font-size: 15px;
+		color: #868686;
+
+	}
+
+
+	.iot_description{
+		display:block;
+		font-size: 14px;
+		position:absolute;
+		bottom: 0px;
+		width: 92%;
+		margin: 4%;
+		margin-bottom: 6%;
+		
+	}
+
+	.iot_status > i{
+
+		color: #443d3d;
+
+	}
+
+	.iot_buttons{
+		display: inline-block;
+		border-radius: 10%;
+		border: none;
+		width: 70px;
+		height: 40px;
+		color: white;
+		font-family: Poppins;
+		font-size:17px;
+		cursor: pointer;
+		margin: 5% 3% 2% 3%;
+
+	}
+
+	#iot_on_button{
+		background-color: #1a9933;
+		border: 1px solid #3b8842;
+	}
+	#iot_on_button:hover{
+		background-color: #09bd2d;
+		border-color: #698322;
+	}
+	#iot_off_button{
+		background-color: #f03636;
+		border: 1px solid #a31616;
+	}
+	#iot_off_button:hover{
+		background-color: #dd0505;
+		border-color: #bb1919;
+		color: yellow;
+	}
+
+	#log_msg{
+		width: 65%;
+	}
+
+	article >ul {
+		display:block;
+		font-size: 90%;
+		line-height: 1.8;;
+	}
+
+	.columns_container{
+		font-size: 90% ;
+		line-height: 1.2;;
+	}
+
+	#h2_info{
+		font-size: 120%;
+	}
+
+	.left_article{
+		float: none;
+		width: 100%;
+		display: block;
+		font-size: 105% ;
+		line-height: 2;;
+	}
+
+	.right_article{
+		float: none;
+		width: 100%;
+		display: block;
+		font-size: 105% ;
+		line-height: 2;;
+	}
+
+	/* LOG Tabelka */
+
+	.log_table {
+		width: 100%;
+		font-family: PTSans, sans-serif;
+		font-size: 70%;
+	}
+	.log_table > tbody > tr{
+		font-size: 100%;
+		transition-duration: 0.15s;
+	}
+	.log_table > tbody > tr:hover{
+
+		background-color: #edeef5;
+		border:1px solid #5a53bd;
+		
+	}
+	.log_table > tbody > tr > th{
+		font-size: 100%;
+		padding-bottom: 0.6%;
+		padding-top: 0.6%;
+		text-align:center !important;
+		border:1px solid #c0bdec;
+		background-color: #e7ebec;
+		font-family: sans-serif, calibri;
+		font-weight: 400;
+		color: #2e69c2;
+	}
+	.log_table > tbody > tr > td{
+
+		padding: 0.5%;
+		text-align: center;
+		border:1px solid #bebcda;
+	}
+
+	#log_lp_row{
+		width: 3%;
+		text-align: center;
+	}
+
+	#log_msg{
+		font-size: 80%;
+	}
+}
