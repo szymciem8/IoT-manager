@@ -4,5 +4,15 @@ Szymon Ciemała https://github.com/szymciem8
 
 # IoT Manager
 
-System that allows to control IoT devices throgh centrilized open-source system. 
+## General Info
+System that allows to control IoT devices through centrilized open-source system. 
 
+## Technologies
+
+Project was created with technologies:
+- Python, 
+- Django,
+- Arduino,
+- Mosquitto MQTT,
+- Ubuntu Server,
+- HTML, CSS
