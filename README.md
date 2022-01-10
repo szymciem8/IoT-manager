@@ -5,7 +5,7 @@ Szymon Ciemała https://github.com/szymciem8
 # IoT Manager
 
 ## General Info
-System that allows to control IoT devices through centrilized open-source system. 
+Centralized system that allows for control of IoT devices. It can be accessed through a web application. 
 
 ## Technologies
 
