@@ -1,5 +1,5 @@
 authors
-Jakub Kaniowski https://github.com/kakubus
+Jakub Kaniowski https://github.com/kakubus </br>
 Szymon Ciemała https://github.com/szymciem8
 
 # IoT Manager
