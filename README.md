@@ -1,4 +1,4 @@
-authors
+### Authors
 Jakub Kaniowski https://github.com/kakubus </br>
 Szymon Ciemała https://github.com/szymciem8
 
